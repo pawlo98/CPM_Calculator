@@ -51,6 +51,9 @@ public class Main {
         BigDecimal deficit = kcal.multiply(BigDecimal.valueOf(0.10).setScale(2,RoundingMode.HALF_UP));
         System.out.println("To lose weight eat: "+ (kcal.subtract(deficit))+ " kcal");
 
+        BmiCalculate bmiCalculate = new BmiCalculate(inputData);
+        System.out.println("Your BMI is: " + bmiCalculate.calculateBmi());
+
 
 
     }
