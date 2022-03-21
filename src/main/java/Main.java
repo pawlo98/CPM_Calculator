@@ -28,9 +28,9 @@ public class Main {
             sex = Sex.valueOf(reader.readLine().toUpperCase());
             System.out.println("Give me your age:");
             age = Integer.parseInt(reader.readLine());
-            System.out.println("Give me your weight:");
+            System.out.println("Give me your weight in kg:");
             weight= Double.parseDouble(reader.readLine());
-            System.out.println("Give me your height:");
+            System.out.println("Give me your height in cm:");
             height= Double.parseDouble(reader.readLine());
             System.out.println("Give me your activity:");
             activity= Double.parseDouble(reader.readLine());
