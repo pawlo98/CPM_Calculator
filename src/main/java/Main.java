@@ -51,10 +51,7 @@ public class Main {
         BigDecimal deficit = kcal.multiply(BigDecimal.valueOf(0.10).setScale(2,RoundingMode.HALF_UP));
         System.out.println("To lose weight eat: "+ (kcal.subtract(deficit))+ " kcal");
 
-        BmiCalculate bmiCalculate = new BmiCalculate(inputData);
-        System.out.println("Your BMI is: " + bmiCalculate.calculateBmi());
-
-
+        printBmiCalculate(inputData);
 
     }
 
@@ -73,5 +70,30 @@ public class Main {
         scaleActivity.append("\n2.00-2.40 person very physically active");
 
         System.out.println(scaleActivity);
+    }
+
+    private static void printBmiCalculate(InputData inputData){
+        BmiCalculate bmiCalculate = new BmiCalculate(inputData);
+        BigDecimal bmi = bmiCalculate.calculateBmi();
+        System.out.println("Your BMI is: " + bmi);
+
+        if (bmi.doubleValue()<=18.5){
+            System.out.println("Underweight");
+        }
+        if (bmi.doubleValue()>18.5 && bmi.doubleValue()<=24.99){
+            System.out.println("Correct value");
+        }
+        if (bmi.doubleValue()>24.99 && bmi.doubleValue()<=29.99){
+            System.out.println("Overweight");
+        }
+        if (bmi.doubleValue()>29.99 && bmi.doubleValue()<=34.99){
+            System.out.println("1st degree obesity");
+        }
+        if (bmi.doubleValue()>34.99 && bmi.doubleValue()<=39.99){
+            System.out.println("2nd degree obesity");
+        }
+        if (bmi.doubleValue()>=40){
+            System.out.println("3rd degree obesity");
+        }
     }
 }
